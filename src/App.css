@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@media print {
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 10mm;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .a4-page {
+    background: linear-gradient(to bottom left, white, #93c5fd) !important;
+  }
+
+  .print-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    page-break-inside: avoid;
+  }
+
+  .id-card {
+    width: 60mm;  /* ID Card size */
+    height: 90mm; /* Standard ID card height */
+    border: 1px solid #000;
+    padding: 5mm;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  button {
+    display: none !important; /* Hide buttons when printing */
+  }
+}
+
+.a4-page {
+  width: 210mm;
+  height: 297mm;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.id-card-container {
+  top: 20mm; /* Position the ID cards near the top */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10mm;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Hide scrollbar but keep scrolling enabled */
+::-webkit-scrollbar {
+  width: 0px;  /* For vertical scrollbar */
+  height: 0px; /* For horizontal scrollbar */
+}
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer & Edge */
+  overflow: auto; /* Ensures scrolling remains enabled */
+}
