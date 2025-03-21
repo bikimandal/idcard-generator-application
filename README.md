@@ -1,12 +1,77 @@
-# Electron + React + Vite
+# RCLD Student ID Card Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Introduction
 
-Currently, two official plugins are available:
+The **RCLD Student ID Card Generator** is a powerful desktop application built with **Electron.js**. It allows users to generate and print student ID cards efficiently with a sleek, user-friendly interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Features
 
-## Expanding the ESLint configuration
+✅ Generate student ID cards with customized details  
+✅ Export ID cards as **PDF** or **image formats**  
+✅ User-friendly **drag & drop** interface  
+✅ Dark mode support 🌙  
+✅ Lightweight & fast performance ⚡
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation
+
+To set up the project locally, follow these steps:
+
+```sh
+# Clone the repository
+git clone https://github.com/YOUR_GITHUB_USERNAME/rcld-student-icard.git
+
+# Navigate into the project directory
+cd rcld-student-icard
+
+# Install dependencies
+npm install
+
+# Run the application
+npm run electron:serve
+```
+
+## 📸 Screenshots
+
+![App Preview](https://via.placeholder.com/800x400.png?text=App+Screenshot)
+
+## 📜 Usage Guide
+
+1. Open the application.
+2. Enter the student's details (Name, Photo, ID, etc.).
+3. Customize the card layout as needed.
+4. Click **Generate ID Card** to preview.
+5. Export the ID card as PDF or image.
+6. Print the ID card directly from the app!
+
+## 🛑 Ignored Files (.gitignore)
+
+The following directories and files are ignored in Git to keep the repo clean:
+
+```
+node_modules/
+dist/
+dist-electron/
+build/
+*.log
+.DS_Store
+```
+
+## 📌 Contributing
+
+Want to contribute? Follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`feature-xyz`)
+3. Commit your changes (`git commit -m "Added xyz feature"`)
+4. Push to your branch (`git push origin feature-xyz`)
+5. Open a **Pull Request** 🚀
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+### 💡 Need Help?
+
+If you face any issues, feel free to open an **Issue** or reach out! 😊
