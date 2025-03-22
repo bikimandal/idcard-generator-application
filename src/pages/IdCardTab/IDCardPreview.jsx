@@ -63,7 +63,7 @@ export default function IDCardPreview() {
                 fathername={person.fatherName || "N/A"}
                 address={person.address || "N/A"}
                 course={person.course || "N/A"}
-                dateofissue={person.dateofissue || "N/A"}
+                dateofissue={person.dateOfIssue || "N/A"}
                 image={person.photo}
               />
             </div>
