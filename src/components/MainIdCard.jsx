@@ -28,14 +28,14 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
                 </div>
             </div>
             {/* Name Logo - Positioned Below Top Content */}
-            <div className='h-[7mm] text-red-800 text-[30px] font-extrabold flex justify-center items-center overflow-hidden'>RCLD</div>
+            <div className='max-h-[18mm] text-red-800 text-[38px] font-extrabold flex justify-center items-center overflow-hidden mt-[1mm]'>RCLD</div>
 
             {/* LOGO UPPER PART */}
             <div className='flex flex-col'>
-                <span className="text-center text-blue-900 text-[12px] font-extrabold">
+                <span className="text-center text-blue-900 text-[13px] font-extrabold">
                     Rashtriya Computer Literacy Drive
                 </span>
-                <span className="text-center text-black text-[5px] font-bold">
+                <span className="text-center text-black text-[6px] font-bold">
                     (A mission encouraged by National IT Task Force, GOVT. OF INDIA)
                 </span>
             </div>
@@ -43,13 +43,13 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
 
             {/* DP */}
             <div className="flex justify-center">
-                <div className="w-[17.5mm] h-[20mm] border-[1.5px] border-blue-900 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="w-[17.5mm] h-[20mm] border-[2px] border-blue-900 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
                     <img src={image} alt="Passport" className="w-full h-full object-cover" />
                 </div>
             </div>
 
             {/* DETAILS SECTION */}
-            <div className='flex flex-col pl-[2mm] pt-2 text-[8px]'>
+            <div className='flex flex-col pl-[2mm] pt-1 text-[8px]'>
 
                 <div className='flex flex-row items-start'>
                     <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Name :</span>
@@ -64,7 +64,7 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
 
                 <div className='flex flex-row items-start'>
                     <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Address :</span>
-                    <span className='text-black text-[10px] font-bold w-[30mm] min-h-[15mm] max-h-[15mm] overflow-hidden'>
+                    <span className='text-black text-[10px] font-bold w-[30mm] min-h-[12mm] max-h-[12mm] overflow-hidden'>
                         {address}
                     </span>
                 </div>

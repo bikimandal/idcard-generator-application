@@ -37,14 +37,14 @@ export default function IDCardPreview() {
       <div className="flex gap-4 mb-6 print:hidden">
         <button
           onClick={() => navigate(-1)}
-          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-900 transition duration-300"
+          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-900 transition duration-300 cursor-pointer"
         >
           ⬅ Go Back
         </button>
 
         <button
           onClick={handlePrint}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 cursor-pointer"
         >
           🖨 Print ID Cards
         </button>
