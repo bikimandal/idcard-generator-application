@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import MainIdCard from "../../components/MainIdCard";
+import { toPng } from "html-to-image"; // Import html-to-image
+import MainIdCard from "../../components/idcard-templates/MainIdCard";
 
 export default function IDCardPreview() {
   const navigate = useNavigate();
   const location = useLocation();
-  const printRef = useRef(null); // Ref for A4 Page Container
+  const cardRefs = useRef([]); // Array of refs for each card
 
   // Get stored data or fallback to location state
   const storedData = JSON.parse(localStorage.getItem("idCardData")) || [];
@@ -18,44 +19,48 @@ export default function IDCardPreview() {
     }
   }, [idCardData]);
 
-  // Print function using ref
-  const handlePrint = () => {
-    if (printRef.current) {
-      const printContents = printRef.current.innerHTML;
-      const originalContents = document.body.innerHTML;
+  // Convert a single card to PNG
+  const handleSaveCardAsImage = async (index) => {
+    if (cardRefs.current[index]) {
+      try {
+        const scale = 3; // Increase resolution
 
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
-      window.location.reload(); // Refresh page to restore app state
+        const imgData = await toPng(cardRefs.current[index], {
+          quality: 1.0,
+          pixelRatio: 10,
+          cacheBust: true,
+          useCORS: true,
+        });
+
+        // Create a download link
+        const link = document.createElement("a");
+        link.href = imgData;
+        link.download = `id_card_${index + 1}.png`;
+        link.click();
+      } catch (error) {
+        console.error("Error generating image:", error);
+      }
     }
   };
 
   return (
     <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      {/* Navigation Buttons */}
-      <div className="flex gap-4 mb-6 print:hidden">
+      {/* Navigation Button */}
+      <div className="mb-6 print:hidden">
         <button
           onClick={() => navigate(-1)}
           className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-900 transition duration-300 cursor-pointer"
         >
           ⬅ Go Back
         </button>
-
-        <button
-          onClick={handlePrint}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 cursor-pointer"
-        >
-          🖨 Print ID Cards
-        </button>
       </div>
 
-      {/* A4 Page Container */}
-      <div ref={printRef} className="w-[210mm] h-[297mm] border-2 border-black bg-white relative print:border-0 p-5 overflow-hidden">
-        {/* ID Cards Grid (3 in a row) */}
-        <div className="grid grid-cols-3 gap-10">
-          {idCardData.map((person, index) => (
-            <div key={index} className="">
+      {/* ID Cards Grid (3 in a row) */}
+      <div className="grid grid-cols-3 gap-10">
+        {idCardData.map((person, index) => (
+          <div key={index} className="flex flex-col items-center">
+            {/* ID Card */}
+            <div ref={(el) => (cardRefs.current[index] = el)} className="relative">
               <MainIdCard
                 regno={person.regno || "N/A"}
                 session={person.session || "N/A"}
@@ -67,8 +72,16 @@ export default function IDCardPreview() {
                 image={person.photo}
               />
             </div>
-          ))}
-        </div>
+
+            {/* Save Button (OUTSIDE the card) */}
+            <button
+              onClick={() => handleSaveCardAsImage(index)}
+              className="mt-3 bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 transition duration-300 cursor-pointer"
+            >
+              📷 Save as Image
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );

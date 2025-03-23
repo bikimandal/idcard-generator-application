@@ -107,7 +107,7 @@ export default function IndexPage() {
     <div className="min-h-screen w-auto bg-gray-900 text-white flex flex-col">
       <header className="text-xl font-semibold text-center py-3 bg-gray-800 shadow-md">ID Card Generator</header>
       <div className="flex-grow p-6 justify-center">
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-4 gap-10">
           {idCards.map((card, index) => (
             <div key={index} className="relative bg-gray-800 p-4 rounded-lg shadow-md flex flex-col items-center [width:85mm] [height:150mm]">
               {index > 0 && (
@@ -155,8 +155,8 @@ export default function IndexPage() {
       <div className="bg-gray-800 p-4 flex justify-between sticky bottom-0">
         <button
           onClick={addIDCard}
-          disabled={idCards.length >= 6}
-          className={`bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md ${idCards.length >= 6 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+          disabled={idCards.length >= 4}
+          className={`bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md ${idCards.length >= 4 ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
         >
           + Add More
         </button>

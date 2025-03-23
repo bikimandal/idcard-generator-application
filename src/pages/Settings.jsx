@@ -1,5 +1,5 @@
 import React from 'react'
-import MainIdCard from '../components/MainIdCard'
+import MainIdCard from '../components/idcard-templates/MainIdCard'
 
 export default function Settings() {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../assets/MainIdCardAssets/rcld-logo.png"
+import logo from "../../assets/MainIdCardAssets/rcld-logo.png"
 import { Phone, Mail, ExternalLink } from "lucide-react"
 
 export default function MainIdCard({ regno, session, name, fathername, address, course, dateofissue, image }) {
