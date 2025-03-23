@@ -11,10 +11,10 @@ export default function IndexPage() {
       : [{ regno: "", session: "", name: "", fatherName: "", address: "", course: "", dateOfIssue: "", photo: "" }];
   });
 
-  useEffect(() => {
-    localStorage.removeItem("idCards");
-    setIdCards([{ regno: "", session: "", name: "", fatherName: "", address: "", course: "", dateOfIssue: "", photo: "" }]);
-  }, [])
+  // useEffect(() => {
+  //   localStorage.removeItem("idCards");
+  //   setIdCards([{ regno: "", session: "", name: "", fatherName: "", address: "", course: "", dateOfIssue: "", photo: "" }]);
+  // }, [])
 
   // Track which fields should be copied
   const [autoFillFields, setAutoFillFields] = useState({

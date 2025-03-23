@@ -35,7 +35,7 @@ const SideNavbar = () => {
       {/* Navigation */}
       <nav className="flex flex-col gap-2">
         <NavItem to="/idcard" icon={<IdCard size={24} />} text="Id Card" collapsed={collapsed} />
-        {/* <NavItem to="/settings" icon={<Settings size={24} />} text="Settings" collapsed={collapsed} /> */}
+        <NavItem to="/settings" icon={<Settings size={24} />} text="Settings" collapsed={collapsed} />
         {/* <NavItem to="/logout" icon={<LogOut size={24} />} text="Logout" collapsed={collapsed} /> */}
       </nav>
     </div>

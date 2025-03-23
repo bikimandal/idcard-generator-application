@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../assets/MainIdCardAssets/rcld-logo.png"
+import { Phone, Mail, ExternalLink } from "lucide-react"
 
 export default function MainIdCard({ regno, session, name, fathername, address, course, dateofissue, image }) {
     return (
@@ -11,14 +12,14 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
 
                 {/* First Section */}
                 <div className='flex-1 flex flex-col items-center'>
-                    <span className='text-blue-900 font-extrabold text-[8px]'>Id NO.</span>
+                    <span className='text-blue-900 font-extrabold text-[8px]'>ID No.</span>
                     <span className='font-bold text-[8px]'>RCLD/ISL/001/</span>
                     <span className='font-bold text-[8px]'>{regno}</span>
                 </div>
 
                 {/* Second Section (Logo) */}
                 <div className='flex-1 flex justify-center'>
-                    <img src={logo} alt="LOGO" className="w-[40px] h-[40px]" />
+                    <img src={logo} alt="LOGO" className="w-[36px] h-[36px]" />
                 </div>
 
                 {/* Third Section */}
@@ -28,7 +29,7 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
                 </div>
             </div>
             {/* Name Logo - Positioned Below Top Content */}
-            <div className='max-h-[18mm] text-red-800 text-[38px] font-extrabold flex justify-center items-center overflow-hidden mt-[1mm]'>RCLD</div>
+            <div className='min-h-[8mm] font-[Arial] text-red-700 drop-shadow-[2px_2px_0px_white] text-[38px] font-extrabold flex justify-center items-center overflow-hidden mt-[]'>RCLD</div>
 
             {/* LOGO UPPER PART */}
             <div className='flex flex-col'>
@@ -49,40 +50,56 @@ export default function MainIdCard({ regno, session, name, fathername, address, 
             </div>
 
             {/* DETAILS SECTION */}
-            <div className='flex flex-col pl-[2mm] pt-1 text-[8px]'>
+            <div className='flex flex-col pl-[2mm] pt text-[9px]'>
 
                 <div className='flex flex-row items-start'>
-                    <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Name :</span>
-                    <span className='text-black text-[10px] inline-block font-bold'>{name}</span>
+                    <span className="text-blue-900 w-[19mm] inline-block font-bold">Name :</span>
+                    <span className='text-black inline-block font-extrabold'>{name}</span>
                 </div>
 
 
                 <div className='flex flex-row items-start'>
-                    <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Father's Name :</span>
-                    <span className='text-black text-[10px] font-bold'>{fathername}</span>
+                    <span className="text-blue-900 w-[19mm] inline-block font-bold">Father's Name :</span>
+                    <span className='text-black font-bold'>{fathername}</span>
                 </div>
 
                 <div className='flex flex-row items-start'>
-                    <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Address :</span>
-                    <span className='text-black text-[10px] font-bold w-[30mm] min-h-[12mm] max-h-[12mm] overflow-hidden'>
+                    <span className="text-blue-900 w-[19mm] inline-block font-bold">Address :</span>
+                    <span className='text-black font-bold w-[30mm] min-h-[10mm] max-h-[10mm] overflow-hidden'>
                         {address}
                     </span>
                 </div>
 
                 <div className='flex flex-row items-start'>
-                    <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Course :</span>
-                    <span className='text-black text-[10px] font-bold'>{course}</span>
+                    <span className="text-blue-900 w-[19mm] inline-block font-bold">Course :</span>
+                    <span className='text-black font-bold'>{course}</span>
                 </div>
 
                 <div className='flex flex-row items-start'>
-                    <span className="text-blue-900 text-[10px] w-[19mm] inline-block font-bold">Date of Issue :</span>
-                    <span className='text-black text-[10px] font-bold'>{dateofissue}</span>
+                    <span className="text-blue-900 w-[19mm] inline-block font-bold">Date of Issue :</span>
+                    <span className='text-black font-bold'>{dateofissue}</span>
                 </div>
 
             </div>
+            {/* Contact section */}
+            <div className='h-[0.3mm] w-full bg-blue-900'></div>
+            <div className='text-[2mm] flex flex-col items-center py-[0.6mm]'>
+                <div className='font-bold max-h-[2.3mm] flex justify-center items-center'>AEC: CYBER WORLD, DESHBANDHUPARA, ISLAMPUR</div>
+                <div className='font-bold max-h-[2.3mm] flex justify-center items-center gap-1'>
+                    <span>Uttar Dinajpur, West Bengal, PIN-733202</span>
+                    <Phone size={7} />
+                    <span>+91 98517 75891</span>
+                </div>
+                <div className='font-bold max-h-[2.3mm] flex gap-1 justify-center items-center'>
+                    <Mail size={7} />
+                    <span>islampur.cyberworld@gmail.com</span>
+                    <ExternalLink size={7} />
+                    <span>rcld.gov.in</span>
+                </div>
+            </div>
 
             {/* Bottom Content - Stays at Bottom & Expands Upwards */}
-            <div className="bg-blue-900 text-white p-1 self-stretch flex justify-center mt-auto">
+            <div className="bg-blue-900 min-h-[5.5mm] max-h-[5.5mm] text-white flex justify-center">
                 <span className='text-[12px]'>IDENTITY CARD</span>
             </div>
         </div>
